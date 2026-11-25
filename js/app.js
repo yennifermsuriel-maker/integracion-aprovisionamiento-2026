@@ -1,5 +1,15 @@
 
-const const API_URL = "";
+
+const API_URL =
+    "https://script.google.com/macros/s/AKfycbxtSlnFBzOa7sMBnq2yq6kfvyz1a5tITDsDWch0omJ7fpMB3VwUz6VubjHzt_135oa4UQ/exec";
+
+const parametros = new URLSearchParams(
+    window.location.hash.substring(1)
+);
+
+const CODIGO_ACCESO =
+    parametros.get("acceso") || "";
+
    
 const formConsulta = document.getElementById("formConsulta");
 const inputTarjeta = document.getElementById("tarjeta");
@@ -57,10 +67,13 @@ async function solicitarDatos(tarjeta, accion) {
         headers: {
             "Content-Type": "text/plain;charset=UTF-8"
         },
-        body: JSON.stringify({
-            tarjeta: tarjeta,
-            accion: accion
-        }),
+        
+body: JSON.stringify({
+    tarjeta: tarjeta,
+    accion: accion,
+    codigoAcceso: CODIGO_ACCESO
+}),
+
         redirect: "follow"
     });
 
@@ -82,6 +95,18 @@ formConsulta.addEventListener("submit", async function(evento) {
     const tarjeta = inputTarjeta.value.trim();
 
     limpiarMensaje();
+
+   
+if (!CODIGO_ACCESO) {
+
+    mostrarMensaje(
+        "Escanea el código QR oficial de la actividad para acceder al registro.",
+        "error"
+    );
+
+    return;
+}
+
 
     if (!/^\d+$/.test(tarjeta)) {
         mostrarMensaje(
