@@ -1,7 +1,6 @@
 
-const API_URL =
-    "https://script.google.com/macros/s/AKfycbxtSlnFBzOa7sMBnq2yq6kfvyz1a5tITDsDWch0omJ7fpMB3VwUz6VubjHzt_135oa4UQ/exec";
-
+const const API_URL = "";
+   
 const formConsulta = document.getElementById("formConsulta");
 const inputTarjeta = document.getElementById("tarjeta");
 const btnConsultar = document.getElementById("btnConsultar");
