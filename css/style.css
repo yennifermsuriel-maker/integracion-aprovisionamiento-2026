@@ -1,0 +1,342 @@
+
+:root {
+    --rojo-claro: #DA291C;
+    --rojo-oscuro: #B91C1C;
+    --fondo: #F4F5F7;
+    --blanco: #FFFFFF;
+    --texto: #252525;
+    --gris: #6B7280;
+    --borde: #E5E7EB;
+    --verde: #15803D;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--fondo);
+    color: var(--texto);
+    min-height: 100vh;
+}
+
+.app-container {
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
+    min-height: 100vh;
+}
+
+/* ENCABEZADO */
+
+.encabezado {
+    background: linear-gradient(
+        145deg,
+        #E52B20,
+        #B91C1C
+    );
+    color: white;
+    text-align: center;
+    padding: 35px 20px 40px;
+    border-radius: 0 0 28px 28px;
+}
+
+.marca {
+    font-size: 46px;
+    font-weight: 800;
+    letter-spacing: -2px;
+    margin-bottom: 18px;
+}
+
+.direccion {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    line-height: 1.6;
+    margin: 0 0 12px;
+}
+
+.encabezado h1 {
+    font-size: 28px;
+    line-height: 1.2;
+    margin: 10px 0;
+}
+
+.lema {
+    font-size: 15px;
+    opacity: 0.95;
+    margin: 14px 0 0;
+}
+
+/* TARJETAS */
+
+.tarjeta {
+    background: var(--blanco);
+    margin: 22px 16px;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+    border: 1px solid var(--borde);
+}
+
+.tarjeta h2 {
+    text-align: center;
+    font-size: 24px;
+    margin: 0 0 12px;
+}
+
+.consulta > p {
+    text-align: center;
+    color: var(--gris);
+    font-size: 15px;
+    margin-bottom: 25px;
+}
+
+/* FORMULARIO */
+
+label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 9px;
+}
+
+input {
+    width: 100%;
+    height: 58px;
+    border: 2px solid var(--borde);
+    border-radius: 12px;
+    background: #FAFAFA;
+    padding: 12px;
+    text-align: center;
+    font-size: 23px;
+    letter-spacing: 2px;
+    color: var(--texto);
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+input::placeholder {
+    font-size: 16px;
+    letter-spacing: 0;
+    color: #9CA3AF;
+}
+
+input:focus {
+    border-color: var(--rojo-claro);
+    background: white;
+}
+
+/* BOTONES */
+
+button {
+    display: block;
+    width: 100%;
+    min-height: 52px;
+    margin-top: 18px;
+    padding: 15px;
+    border: none;
+    border-radius: 12px;
+    background: var(--rojo-claro);
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+
+button:hover {
+    background: var(--rojo-oscuro);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+button:focus-visible {
+    outline: 3px solid #FCA5A5;
+    outline-offset: 3px;
+}
+
+.secundario {
+    background: transparent;
+    color: var(--gris);
+    border: 1px solid var(--borde);
+    font-size: 12px;
+}
+
+.secundario:hover {
+    background: #F3F4F6;
+    color: var(--texto);
+}
+
+/* RESULTADO */
+
+.resultado {
+    text-align: center;
+    animation: aparecer 0.3s ease;
+}
+
+.bienvenida {
+    font-size: 14px;
+    color: var(--gris);
+    margin: 0 0 15px;
+}
+
+#nombreParticipante {
+    font-size: 26px;
+    line-height: 1.3;
+    overflow-wrap: anywhere;
+}
+
+#departamentoParticipante {
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--gris);
+    margin: 8px 0 22px;
+}
+
+/* IDENTIFICACIÓN DEL EQUIPO */
+
+.equipo {
+    background: #2563EB;
+    color: white;
+    border-radius: 18px;
+    border: 1px solid rgba(0,0,0,0.12);
+    padding: 28px 15px;
+    margin: 20px 0;
+    overflow-wrap: anywhere;
+}
+
+#tituloEquipo {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin: 0 0 12px;
+}
+
+#numeroEquipo {
+    font-size: clamp(28px, 12vw, 64px);
+    font-weight: 800;
+    line-height: 1.15;
+    margin: 5px 0;
+}
+
+#colorEquipo {
+    font-size: 23px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 12px 0 0;
+}
+
+/* ESTADO DE ASISTENCIA */
+
+#estadoAsistencia {
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 20px 0;
+    padding: 12px;
+    border-radius: 10px;
+}
+
+.pendiente {
+    color: #92400E;
+    background: #FEF3C7;
+}
+
+.registrado {
+    color: #166534;
+    background: #DCFCE7;
+}
+
+.error {
+    color: #B91C1C;
+    background: #FEE2E2;
+}
+
+.exito {
+    color: #166534;
+    background: #DCFCE7;
+}
+
+#mensaje {
+    margin-top: 16px;
+    font-size: 14px;
+    line-height: 1.5;
+    text-align: center;
+    border-radius: 10px;
+}
+
+#mensaje:not(:empty) {
+    padding: 12px;
+}
+
+/* PIE DE PÁGINA */
+
+footer {
+    text-align: center;
+    color: var(--gris);
+    font-size: 12px;
+    line-height: 1.6;
+    padding: 15px 20px 30px;
+}
+
+footer p {
+    margin: 4px 0;
+}
+
+/* ANIMACIONES */
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ADAPTACIÓN A PANTALLAS */
+
+@media (min-width: 600px) {
+    .app-container {
+        margin: 25px auto;
+    }
+
+    .encabezado {
+        border-radius: 24px;
+    }
+}
+
+@media (max-width: 360px) {
+    .tarjeta {
+        margin: 16px 10px;
+        padding: 18px;
+    }
+
+    .encabezado h1 {
+        font-size: 24px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+}
